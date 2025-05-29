@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Fale Conosco - Higienização de Estofados</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="box">
+            <h1>
+                <img width="150px" src="logo.jpeg" alt="Logo da empresa">
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="servico.html">Serviços</a></li>
+                    <li><a href="fale-conosco.html">Fale Conosco</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <form  action="https://formspree.io/f/xvgaeypo" id="contato-form" method="POST">
+            
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="nome" class="input-text" required>
+
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="_replyto" class="input-text" required>
+
+            <label for="cel">Celular:</label>
+            <input type="tel" id="cel" name="celular" class="input-text" required>
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="mensagem" cols="70" rows="10" class="input-text" required></textarea>
+
+            <fieldset>
+                <legend>Como podemos entrar em contato?</legend>
+
+                <label for="radio-whatsapp">
+                    <input type="radio" id="radio-whatsapp" name="contato_preferido" value="whatsapp" checked>
+                    WhatsApp
+                </label>
+
+                <label for="radio-cel">
+                    <input type="radio" id="radio-cel" name="contato_preferido" value="cel">
+                    Celular
+                </label>
+                
+                <label for="radio-mail">
+                    <input type="radio" id="radio-mail" name="contato_preferido" value="mail">
+                    Email
+                </label>                    
+            </fieldset>
+
+            <label class="checkbox">
+                <input type="checkbox" id="news" name="quero_promocao" checked>
+                Quero receber e-mails promocionais da empresa.
+            </label>
+
+            <input type="hidden" name="_subject" value="Nova mensagem do site">
+            <input type="submit" value="Enviar" class="enviar">
+        </form>
+
+        <table>
+            <tr>
+                <th>Dia</th>
+                <th>Horário</th>
+            </tr>
+            <tr>
+                <td>Segunda à sexta</td>
+                <td>6h ~ 20h</td>
+            </tr>
+            <tr>
+                <td>Sábado</td>
+                <td>10h ~ 18h</td>
+            </tr>
+            <tr>
+                <td>Domingo</td>
+                <td>12h ~ 18h</td>
+            </tr>
+        </table>
+    </main>
+
+    <footer>
+        <img width="100px" src="logo.jpeg" alt="Logo da empresa">
+        <p>&copy; Gabriel S Neiva 2025</p>
+    </footer>
+    <script>
+      document.getElementById("contato-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Impede o comportamento padrão
+
+    let formData = new FormData(this); // Captura os dados do formulário
+
+    fetch(this.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+            "Accept": "application/json" // Define o formato esperado da resposta
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            alert("Dados enviados com sucesso!");
+            this.reset(); // Limpa o formulário após envio
+        } else {
+            return response.json().then(data => {
+                throw new Error(data.error || "Erro desconhecido");
+            });
+        }
+    })
+    .catch(error => {
+        console.error("Erro ao enviar:", error);
+        alert("Falha ao enviar os dados. Tente novamente mais tarde.");
+    });
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+.titulo-header{
+    padding: 30px;
+    text-align: center;
+}
+#destaque{
+    width: 100%;
+}
+.principal{
+    background: #8b5742;
+    padding: 35px;
+}
+p{
+    text-align: center;
+    
+}
+#feedback{
+    font-size: 22px;
+}
+strong em{
+    color: red;
+}
+.diferencial{
+    background: white;
+}
+.titulo-centralizado{
+    text-align: center;
+}
+.itens{
+    font-size: 20px;
+    font-style: italic;
+}
+.lista-itens{
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    margin-right: 15%;
+}
