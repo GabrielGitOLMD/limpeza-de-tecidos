@@ -179,6 +179,10 @@ footer{
     .box, .principal, .conteudo-diferencial, .mapa,.video{
         width:auto;
     }
+    .box img{
+        border-radius: 10px 10px 10px 10px;
+
+    }
 
     h1{
         text-align: center;
