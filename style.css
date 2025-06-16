@@ -1,5 +1,6 @@
 body{
-    font-family: 'roboto',sans-serif;
+    font-family: 'Montserrat' sans-serif;
+    
 }
 header{
     background-color: #e8e8e8;
@@ -34,7 +35,7 @@ nav a:hover{
 }
 .titulo-centralizado{
     text-align: center;
-    font-size: 28px;
+    font-size: 40px;
     margin: 0 0 15px;
 }
 .principal p{
@@ -44,7 +45,7 @@ nav a:hover{
     font-weight: bold;
 }
 .principal em{
-    font-style: italic;
+    font-style: 'Open Sans';
 }
 .imagemdiferencial{
     width: 60%;
